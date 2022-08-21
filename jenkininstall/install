@@ -1,0 +1,63 @@
+Edureka!
+
+Jenkins Installation & Configuration:
+
+#Launch New AWS Linux Instances
+
+#Use Mobaxtream to login to instance
+
+sudo -i
+
+sudo yum update -y
+
+#Install Jenkins :
+
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+#Install epel Package:
+
+amazon-linux-extras install epel
+#Install Java: 
+amazon-linux-extras install java-openjdk11
+
+yum install jenkins
+
+#Start Jenkins:
+
+# Start jenkins service
+service jenkins start
+
+# Setup Jenkins to start at boot,
+sudo chkconfig jenkins on
+
+
+
+SMTP Server: smtp.office365.com
+SMTP Port : 587
+Credentials: Add Admin email id & PSWD
+Check TLS
+Click Advance LinK:
+
+Dmail.smtp.starttls.enable=true
+
+
+bmeijxsthxtucnfx
+
+
+
+cd /tmp
+sudo wget https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz
+sudo tar xf /tmp/apache-maven-3.8.6-bin.tar.gz -C /opt
+#Create a symlink for Apache maven directory to update the maven versions
+sudo ln -s /opt/apache-maven-3.8.6 /opt/maven
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`````
+
+#Set Java Path / Environment Variables:
+#open .bashrc & add the following lines:
+
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-11.0.13.0.8-1.amzn2.0.3.x86_64"
+export MAVEN_HOME=/opt/apache-maven-3.8.6
+export M2=/opt/apache-maven-3.8.6/bin
+PATH=$PATH:$HOME/bin:$JAVA_HOME/bin:$MAVEN_HOME:$M2
